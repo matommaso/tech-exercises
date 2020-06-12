@@ -38,9 +38,9 @@ public class LogSummary {
 
     public String toCSV() {
         return remoteAddress
-                + ";" + requestNumber
-                + ";" + percentageRequest
-                + ";" + totalBytes
-                + ";" + percentageTotalBytes;
+                + "," + requestNumber
+                + "," + percentageRequest
+                + "," + totalBytes
+                + "," + percentageTotalBytes;
     }
 }
