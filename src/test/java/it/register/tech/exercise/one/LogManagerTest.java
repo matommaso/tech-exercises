@@ -16,16 +16,13 @@ public class LogManagerTest {
 
     LogManager logManagerTest = new LogManager();
     String pathImportFileTest = "src/test/resources/logfiles/requests.log";
-    LogDetail expectedLogDetail01 = new LogDetail("1591391957001", "101", "400", "127.0.0.1");
-    LogDetail expectedLogDetail02 = new LogDetail("1591391957002", "102", "401", "127.0.0.1");
-    LogDetail expectedLogDetailWithStatusOK = new LogDetail("1591391957003", "102", "200", "127.0.0.1");
+    LogDetail expectedLogDetail01 = LogDetailProvider.getLogDetail(1591391957001L, 101L, 400, "127.0.0.1");
+    LogDetail expectedLogDetail02 =  LogDetailProvider.getLogDetail(1591391957002L, 102L, 401, "127.0.0.1");
+    LogDetail expectedLogDetailWithStatusOK =  LogDetailProvider.getLogDetail(1591391957003L, 102L, 200, "127.0.0.1");
 
     @Test
     public void shouldImportLogDetailsFromFile() {
-
-
         List<LogDetail> actualLogDetails = logManagerTest.importLogDetails(pathImportFileTest);
-
         assertThat(actualLogDetails, containsInAnyOrder(expectedLogDetail01, expectedLogDetail02));
     }
 

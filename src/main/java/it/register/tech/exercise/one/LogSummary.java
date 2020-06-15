@@ -8,10 +8,10 @@ public class LogSummary {
     private final String remoteAddress;
     private final int requestNumber;
     private final int percentageRequest;
-    private final int totalBytes;
+    private final long totalBytes;
     private final int percentageTotalBytes;
 
-    public LogSummary(String remoteAddress, int requestNumber, int percentageRequest, int totalBytes, int percentageTotalBytes) {
+    public LogSummary(String remoteAddress, int requestNumber, int percentageRequest, long totalBytes, int percentageTotalBytes) {
         this.remoteAddress = remoteAddress;
         this.requestNumber = requestNumber;
         this.percentageRequest = percentageRequest;
