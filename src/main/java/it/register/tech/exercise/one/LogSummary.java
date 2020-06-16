@@ -2,16 +2,16 @@ package it.register.tech.exercise.one;
 
 import java.util.Objects;
 
+
 public class LogSummary {
+    public static final String COMMA_SEPARATOR = ",";
+    private String remoteAddress;
+    private int requestNumber;
+    private double percentageRequest;
+    private long totalBytes;
+    private double percentageTotalBytes;
 
-
-    private final String remoteAddress;
-    private final int requestNumber;
-    private final int percentageRequest;
-    private final long totalBytes;
-    private final int percentageTotalBytes;
-
-    public LogSummary(String remoteAddress, int requestNumber, int percentageRequest, long totalBytes, int percentageTotalBytes) {
+    public LogSummary(String remoteAddress, int requestNumber, double percentageRequest, long totalBytes, double percentageTotalBytes) {
         this.remoteAddress = remoteAddress;
         this.requestNumber = requestNumber;
         this.percentageRequest = percentageRequest;
@@ -36,11 +36,15 @@ public class LogSummary {
         return Objects.hash(remoteAddress, requestNumber, percentageRequest, totalBytes, percentageTotalBytes);
     }
 
+    public int getRequestNumber() {
+        return requestNumber;
+    }
+
     public String toCSV() {
         return remoteAddress
-                + "," + requestNumber
-                + "," + percentageRequest
-                + "," + totalBytes
-                + "," + percentageTotalBytes;
+                + COMMA_SEPARATOR + requestNumber
+                + COMMA_SEPARATOR + percentageRequest
+                + COMMA_SEPARATOR + totalBytes
+                + COMMA_SEPARATOR + percentageTotalBytes;
     }
 }

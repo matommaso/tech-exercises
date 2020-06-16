@@ -13,6 +13,6 @@ class LogSummaryTest {
 
         String actualLogSummaryInCSV = logSummary.toCSV();
 
-        assertThat(actualLogSummaryInCSV, equalTo("127.0.0.1,2,1,203,1"));
+        assertThat(actualLogSummaryInCSV, equalTo("127.0.0.1,2,1.0,203,1.0"));
     }
 }

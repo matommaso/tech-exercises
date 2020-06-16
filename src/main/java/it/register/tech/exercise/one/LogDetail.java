@@ -1,23 +1,19 @@
 package it.register.tech.exercise.one;
 
-import com.opencsv.bean.CsvBindByPosition;
-
 import java.util.Objects;
 
 public class LogDetail {
-    @CsvBindByPosition(position = 0, required = true)
-    private long timestamp;
 
-    @CsvBindByPosition(position = 1, required = true)
-    private long bytes;
+    private final long timestamp;
+    private final long bytes;
+    private final int status;
+    private final String remoteAddress;
 
-    @CsvBindByPosition(position = 2, required = true)
-    private int status;
-
-    @CsvBindByPosition(position = 3, required = true)
-    private String remoteAddress;
-
-    public void LogDetail() {
+    public LogDetail(long timestamp, long bytes, int status, String remoteAddress) {
+        this.timestamp = timestamp;
+        this.bytes = bytes;
+        this.status = status;
+        this.remoteAddress = remoteAddress;
     }
 
     @Override
@@ -25,8 +21,8 @@ public class LogDetail {
         return "LogDetail{" +
                 "timestamp=" + timestamp +
                 ", bytes=" + bytes +
-                ", status='" + status + '\'' +
-                ", remoteAddress='" + remoteAddress + '\'' +
+                ", status='" + status +
+                ", remoteAddress='" + remoteAddress +
                 '}';
     }
 
@@ -50,31 +46,15 @@ public class LogDetail {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
-        this.timestamp = timestamp;
-    }
-
     public long getBytes() {
         return bytes;
-    }
-
-    public void setBytes(long bytes) {
-        this.bytes = bytes;
     }
 
     public int getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
     public String getRemoteAddress() {
         return remoteAddress;
-    }
-
-    public void setRemoteAddress(String remoteAddress) {
-        this.remoteAddress = remoteAddress;
     }
 }
