@@ -1,15 +1,16 @@
 package it.register.tech.exercise.one;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -23,15 +24,14 @@ public class LogManager {
     public static final String SEMICOLON_DELIMITER = ";";
     public static final int STATUS_OK = 200;
 
-    public void createDailyReport(String pathFileToImport, String pathFileDailyReport) {
-
-        List<LogDetail> logDetails = importLogDetails(pathFileToImport);
-        List<LogSummary> logSummaries = mapFrom(logDetails);
-        Collections.sort(logSummaries, (ls1, ls2) -> ls2.getRequestNumber() - ls1.getRequestNumber());
-        writeOnFile(pathFileDailyReport, logSummaries);
-    }
-
-
+//    public void createDailyReport(String pathFileToImport, String pathFileDailyReport) {
+//
+//        List<LogDetail> logDetails = importLogDetails(pathFileToImport);
+//        List<LogSummary> logSummaries = mapFrom(logDetails);
+//        Collections.sort(logSummaries, (ls1, ls2) -> ls2.getRequestNumber() - ls1.getRequestNumber());
+//        writeOnFileInCSVFormat(pathFileDailyReport, logSummaries);
+//    }
+    
     public List<LogDetail> importLogDetails(String pathFileToImport) {
 
         List<LogDetail> logDetails = new ArrayList<>();
@@ -100,11 +100,21 @@ public class LogManager {
                 .collect(toList());
     }
 
-    public void writeOnFile(String summaryFilePath, List<LogSummary> logSummaries) {
+    public void writeOnFileInCSVFormat(String summaryFilePath, List<LogSummary> logSummaries) {
 
         try {
             List<String> lines = logSummaries.stream().map(logSummary -> logSummary.toCSV()).collect(Collectors.toList());
             Files.write(Paths.get(summaryFilePath), lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeOnFileInJsonFormat(String summaryFilePath, List<LogSummary> logSummaries) {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writeValue(new File(summaryFilePath), logSummaries);
         } catch (IOException e) {
             e.printStackTrace();
         }

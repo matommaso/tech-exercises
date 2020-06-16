@@ -36,15 +36,51 @@ public class LogSummary {
         return Objects.hash(remoteAddress, requestNumber, percentageRequest, totalBytes, percentageTotalBytes);
     }
 
-    public int getRequestNumber() {
-        return requestNumber;
-    }
-
     public String toCSV() {
         return remoteAddress
                 + COMMA_SEPARATOR + requestNumber
                 + COMMA_SEPARATOR + percentageRequest
                 + COMMA_SEPARATOR + totalBytes
                 + COMMA_SEPARATOR + percentageTotalBytes;
+    }
+
+    public String getRemoteAddress() {
+        return remoteAddress;
+    }
+
+    public void setRemoteAddress(String remoteAddress) {
+        this.remoteAddress = remoteAddress;
+    }
+
+    public int getRequestNumber() {
+        return requestNumber;
+    }
+
+    public void setRequestNumber(int requestNumber) {
+        this.requestNumber = requestNumber;
+    }
+
+    public double getPercentageRequest() {
+        return percentageRequest;
+    }
+
+    public void setPercentageRequest(double percentageRequest) {
+        this.percentageRequest = percentageRequest;
+    }
+
+    public long getTotalBytes() {
+        return totalBytes;
+    }
+
+    public void setTotalBytes(long totalBytes) {
+        this.totalBytes = totalBytes;
+    }
+
+    public double getPercentageTotalBytes() {
+        return percentageTotalBytes;
+    }
+
+    public void setPercentageTotalBytes(double percentageTotalBytes) {
+        this.percentageTotalBytes = percentageTotalBytes;
     }
 }

@@ -12,7 +12,7 @@ public class MainTechOne {
 
         List<LogDetail> logDetails = logManager.importLogDetails(pathImportFileTest);
         List<LogSummary> logSummaries = logManager.mapFrom(logDetails);
-        logManager.writeOnFile(filePath, logSummaries);
+        logManager.writeOnFileInCSVFormat(filePath, logSummaries);
     }
 }
 
