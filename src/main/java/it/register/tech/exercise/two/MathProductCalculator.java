@@ -18,9 +18,11 @@ public class MathProductCalculator {
         return result;
     }
 
-    public int[] multiply(int[] factor01, int count) {
+    public int[] multiply(int[] factor01, int[] factor02) {
 
         int[] result = new int[32];
+
+        int count = calculateSumCount(factor02);
 
         if (count == 0) {
             return result;
@@ -33,5 +35,13 @@ public class MathProductCalculator {
             }
             return result;
         }
+    }
+
+    private int calculateSumCount(int[] factor02) {
+        int count = 0;
+        for(int i=0; i<factor02.length; i++){
+            count = count + factor02[i]*((int)Math.pow(10,i));
+        }
+        return count;
     }
 }

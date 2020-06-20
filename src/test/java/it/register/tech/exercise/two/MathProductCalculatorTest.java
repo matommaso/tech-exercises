@@ -71,9 +71,9 @@ class MathProductCalculatorTest {
         factor01[0] = 2;
         factor01[1] = 1;
 
-        int count = 0;
+        int[] factor02 = new int[32];
 
-        int[] actualResult = testSubject.multiply(factor01, count);
+        int[] actualResult = testSubject.multiply(factor01, factor02);
         int[] expectedResult = new int[32];
 
         assertThat(actualResult, equalTo(expectedResult));
@@ -86,9 +86,10 @@ class MathProductCalculatorTest {
         factor01[0] = 2;
         factor01[1] = 1;
 
-        int count = 1;
+        int[] factor02 = new int[32];
+        factor02[0] = 1;
 
-        int[] actualResult = testSubject.multiply(factor01, count);
+        int[] actualResult = testSubject.multiply(factor01, factor02);
         int[] expectedResult = new int[32];
         expectedResult[0] = 2;
         expectedResult[1] = 1;
@@ -104,9 +105,10 @@ class MathProductCalculatorTest {
         factor01[0] = 2;
         factor01[1] = 1;
 
-        int count = 2;
+        int[] factor02 = new int[32];
+        factor02[0] = 2;
 
-        int[] actualResult = testSubject.multiply(factor01, count);
+        int[] actualResult = testSubject.multiply(factor01, factor02);
 
         int[] expectedResult = new int[32];
         expectedResult[0] = 4;
@@ -122,9 +124,11 @@ class MathProductCalculatorTest {
         factor01[0] = 2;
         factor01[1] = 1;
 
-        int count = 10;
+        int[] factor02 = new int[32];
+        factor02[0] = 0;
+        factor02[1] = 1;
 
-        int[] actualResult = testSubject.multiply(factor01, count);
+        int[] actualResult = testSubject.multiply(factor01, factor02);
         int[] expectedResult = new int[32];
         expectedResult[0] = 0;
         expectedResult[1] = 2;
@@ -141,9 +145,12 @@ class MathProductCalculatorTest {
         factor01[1] = 9;
         factor01[2] = 9;
 
-        int count = 123;
+        int[] factor02 = new int[32];
+        factor02[0] = 3;
+        factor02[1] = 2;
+        factor02[2] = 1;
 
-        int[] actualResult = testSubject.multiply(factor01, count);
+        int[] actualResult = testSubject.multiply(factor01, factor02);
         int[] expectedResult = new int[32];
         expectedResult[0] = 7;
         expectedResult[1] = 7;
