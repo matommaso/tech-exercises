@@ -74,6 +74,7 @@ class MathProductCalculatorTest {
         int[] factor02 = new int[32];
 
         int[] actualResult = testSubject.multiply(factor01, factor02);
+
         int[] expectedResult = new int[32];
 
         assertThat(actualResult, equalTo(expectedResult));
@@ -90,6 +91,7 @@ class MathProductCalculatorTest {
         factor02[0] = 1;
 
         int[] actualResult = testSubject.multiply(factor01, factor02);
+
         int[] expectedResult = new int[32];
         expectedResult[0] = 2;
         expectedResult[1] = 1;
@@ -129,6 +131,7 @@ class MathProductCalculatorTest {
         factor02[1] = 1;
 
         int[] actualResult = testSubject.multiply(factor01, factor02);
+
         int[] expectedResult = new int[32];
         expectedResult[0] = 0;
         expectedResult[1] = 2;
@@ -151,6 +154,7 @@ class MathProductCalculatorTest {
         factor02[2] = 1;
 
         int[] actualResult = testSubject.multiply(factor01, factor02);
+
         int[] expectedResult = new int[32];
         expectedResult[0] = 7;
         expectedResult[1] = 7;
@@ -161,6 +165,78 @@ class MathProductCalculatorTest {
         expectedResult[5] = 1;
 
         assertThat(actualResult, equalTo(expectedResult));
+    }
+
+    @Test
+    void shouldSubtractOne(){
+
+        int[] value01 = new int[32];
+        value01[0] = 9;
+        value01[1] = 9;
+        value01[2] = 9;
+
+
+        int[] actualResult = testSubject.subtractOne(value01);
+        int[] expectedResult = new int[32];
+        expectedResult[0] = 8;
+        expectedResult[1] = 9;
+        expectedResult[2] = 9;
+
+        assertThat(actualResult, equalTo(expectedResult));
+
+    }
+
+    @Test
+    void shouldSubtractOneWithASequenceOfAmountCarriedOver(){
+
+        int[] value01 = new int[32];
+        value01[0] = 0;
+        value01[1] = 0;
+        value01[2] = 1;
+
+
+        int[] actualResult = testSubject.subtractOne(value01);
+        int[] expectedResult = new int[32];
+        expectedResult[0] = 9;
+        expectedResult[1] = 9;
+        expectedResult[2] = 0;
+
+        assertThat(actualResult, equalTo(expectedResult));
+
+    }
+
+    @Test
+    void shouldSubtractOneManyTest(){
+
+        int[] value01 = new int[32];
+        value01[0] = 1;
+        value01[1] = 0;
+        value01[2] = 1;
+
+
+        int[] actualResult = testSubject.subtractOne(value01);
+        int[] expectedResult = new int[32];
+        expectedResult[0] = 0;
+        expectedResult[1] = 0;
+        expectedResult[2] = 1;
+
+        assertThat(actualResult, equalTo(expectedResult));
+
+
+        int[] value02 = new int[32];
+        value02[0] = 0;
+        value02[1] = 1;
+        value02[2] = 1;
+
+
+        actualResult = testSubject.subtractOne(value02);
+        expectedResult = new int[32];
+        expectedResult[0] = 9;
+        expectedResult[1] = 0;
+        expectedResult[2] = 1;
+
+        assertThat(actualResult, equalTo(expectedResult));
+
     }
 
 }
