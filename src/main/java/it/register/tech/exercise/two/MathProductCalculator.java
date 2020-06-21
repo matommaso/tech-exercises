@@ -114,4 +114,27 @@ public class MathProductCalculator {
         }
         return result;
     }
+
+    public int[] factorial(int[] value) {
+
+        if (isZero(value)) {
+            return null;
+        } else {
+            return factorialRecursiveStep(value);
+        }
+    }
+
+
+    private int[] factorialRecursiveStep(int[] value) {
+
+        if (isZero(value)) {
+            int[] one = new int[32];
+            one[0] = 1;
+            return one;
+        } else {
+            int[] a = factorialRecursiveStep(subtractOne(value));
+            int[] result = multiply(value, a);
+            return result;
+        }
+    }
 }

@@ -168,7 +168,7 @@ class MathProductCalculatorTest {
     }
 
     @Test
-    void shouldSubtractOne(){
+    void shouldSubtractOne() {
 
         int[] value01 = new int[32];
         value01[0] = 9;
@@ -187,7 +187,7 @@ class MathProductCalculatorTest {
     }
 
     @Test
-    void shouldSubtractOneWithASequenceOfAmountCarriedOver(){
+    void shouldSubtractOneWithASequenceOfAmountCarriedOver() {
 
         int[] value01 = new int[32];
         value01[0] = 0;
@@ -206,7 +206,7 @@ class MathProductCalculatorTest {
     }
 
     @Test
-    void shouldSubtractOneManyTest(){
+    void shouldSubtractOneManyTest() {
 
         int[] value01 = new int[32];
         value01[0] = 1;
@@ -238,5 +238,24 @@ class MathProductCalculatorTest {
         assertThat(actualResult, equalTo(expectedResult));
 
     }
+
+
+    @Test
+    void shouldCalculateTheFactorialOfAGivenNumber() {
+
+        int[] value = new int[32];
+        value[0] = 4;
+
+
+        int[] actualResult = testSubject.factorial(value);
+        int[] expectedResult = new int[32];
+        expectedResult[0] = 4;
+        expectedResult[1] = 2;
+
+        assertThat(actualResult, equalTo(expectedResult));
+
+
+    }
+
 
 }
