@@ -5,11 +5,9 @@ import it.register.tech.exercise.one.model.ExportFormat;
 import it.register.tech.exercise.one.model.LogDetail;
 import it.register.tech.exercise.one.model.LogSummary;
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.mockito.Mockito.*;
 
 

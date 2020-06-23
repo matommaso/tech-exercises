@@ -1,6 +1,5 @@
 package it.register.tech.exercise.one;
 
-import com.opencsv.exceptions.CsvValidationException;
 import it.register.tech.exercise.one.model.ExportFormat;
 import it.register.tech.exercise.one.model.LogDetail;
 import it.register.tech.exercise.one.model.LogSummary;
@@ -40,8 +39,6 @@ public class LogManager {
                     break;
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (CsvValidationException e) {
             e.printStackTrace();
         }
     }
