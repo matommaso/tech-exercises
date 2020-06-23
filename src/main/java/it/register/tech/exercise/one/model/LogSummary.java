@@ -63,8 +63,4 @@ public class LogSummary {
     public double getPercentageTotalBytes() {
         return percentageTotalBytes;
     }
-
-    public void setPercentageTotalBytes(double percentageTotalBytes) {
-        this.percentageTotalBytes = percentageTotalBytes;
-    }
 }

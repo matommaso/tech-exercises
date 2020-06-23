@@ -1,6 +1,5 @@
 package it.register.tech.exercise.one;
 
-import it.register.tech.exercise.one.LogExporter;
 import it.register.tech.exercise.one.model.LogSummary;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +18,7 @@ class LogExporterTest {
     LogExporter logExporterTest = new LogExporter();
 
     @Test
-    public void shouldWriteLogSummariesOnFileInCSVFormat() throws IOException {
+    public void shouldWriteLogSummariesOnAFileInCSVFormat() throws IOException {
 
         String filePath = "src/test/resources/reports/ipaddr.csv";
 
@@ -36,9 +35,9 @@ class LogExporterTest {
     }
 
     @Test
-    public void shouldWriteLogSummariesOnFileInJsonFormat() throws IOException {
+    public void shouldWriteLogSummariesOnAFileInJsonFormat() throws IOException {
 
-        String filePath = "src/test/resources/reports/ipaddr.csv";
+        String filePath = "src/test/resources/reports/ipaddr.json";
         List<LogSummary> logSummariesTest = Arrays.asList(
                 new LogSummary("127.0.0.1", 2, 2 / 20D, 200, 200 / 2000D));
 

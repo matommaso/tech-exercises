@@ -26,9 +26,7 @@ public class LogManager {
             List<LogDetail> logDetails = this.logImporter.importLogDetails(fileImportPath);
             List<LogSummary> logSummaries = logDetailsMapper.mapFrom(logDetails);
 
-            List<LogSummary> sortedLogSummaries = logSummaries.stream()
-                    .sorted(Comparator.comparingInt(LogSummary::getRequestNumber).reversed())
-                    .collect(Collectors.toList());
+            List<LogSummary> sortedLogSummaries = sortBy(logSummaries,Comparator.comparingInt(LogSummary::getRequestNumber).reversed());
 
             switch (exportFormat) {
                 case CSV:
@@ -41,5 +39,11 @@ public class LogManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private List<LogSummary> sortBy(List<LogSummary> logSummaries, Comparator<LogSummary> comparator) {
+        return logSummaries.stream()
+                .sorted(comparator)
+                .collect(Collectors.toList());
     }
 }

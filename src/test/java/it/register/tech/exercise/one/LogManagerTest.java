@@ -29,7 +29,7 @@ public class LogManagerTest {
 
 
     @Test
-    public void shouldSummarizeAndCallCSVPrinter() throws IOException, CsvValidationException {
+    public void shouldSummarizeLogsAndCallCSVPrinter() throws IOException {
 
         ExportFormat exportFormat = ExportFormat.CSV;
 
@@ -58,7 +58,7 @@ public class LogManagerTest {
     }
 
     @Test
-    public void shouldSummarizeAndCallJsonPrinter() throws IOException, CsvValidationException {
+    public void shouldSummarizeLogsAndCallJsonPrinter() throws IOException {
 
         ExportFormat exportFormat = ExportFormat.JSON;
 

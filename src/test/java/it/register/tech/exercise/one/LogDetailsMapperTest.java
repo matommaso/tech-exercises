@@ -1,20 +1,13 @@
 package it.register.tech.exercise.one;
 
-import com.opencsv.exceptions.CsvValidationException;
-import it.register.tech.exercise.one.model.ExportFormat;
 import it.register.tech.exercise.one.model.LogDetail;
 import it.register.tech.exercise.one.model.LogSummary;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static org.mockito.Mockito.*;
-
 
 public class LogDetailsMapperTest {
 

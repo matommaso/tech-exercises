@@ -25,14 +25,14 @@ class LogImporterTest {
     }
 
     @Test
-    public void shouldImportLogDetailsFromFileWithEmptyLine() throws IOException, CsvValidationException {
+    public void shouldImportLogDetailsFromFileWithEmptyLine() throws IOException {
         String pathImportFileTestWithEmptyLine = "src/test/resources/logfiles/requestsWithEmptyLine.log";
         List<LogDetail> actualLogDetails = logImporterTest.importLogDetails(pathImportFileTestWithEmptyLine);
         assertThat(actualLogDetails, containsInAnyOrder(expectedLogDetail01, expectedLogDetail02, expectedLogDetailWithStatusOK));
     }
 
     @Test
-    public void shouldImportLogDetailsFromFileWithWhiteSpace() throws IOException, CsvValidationException {
+    public void shouldImportLogDetailsFromFileWithWhiteSpace() throws IOException {
         String pathImportFileTestWithWhiteSpace = "src/test/resources/logfiles/requestsWithWhiteSpace.log";
         List<LogDetail> actualLogDetails = logImporterTest.importLogDetails(pathImportFileTestWithWhiteSpace);
         assertThat(actualLogDetails, containsInAnyOrder(expectedLogDetail01, expectedLogDetail02, expectedLogDetailWithStatusOK));
