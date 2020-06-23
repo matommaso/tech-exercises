@@ -1,6 +1,7 @@
 package it.register.tech.exercise.one;
 
 import com.opencsv.exceptions.CsvValidationException;
+import it.register.tech.exercise.one.model.LogDetail;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

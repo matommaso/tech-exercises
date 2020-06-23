@@ -1,6 +1,7 @@
 package it.register.tech.exercise.one;
 
 import com.opencsv.exceptions.CsvValidationException;
+import it.register.tech.exercise.one.model.LogDetail;
 
 import java.io.BufferedReader;
 import java.io.IOException;

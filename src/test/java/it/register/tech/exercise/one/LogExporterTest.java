@@ -1,5 +1,7 @@
 package it.register.tech.exercise.one;
 
+import it.register.tech.exercise.one.LogExporter;
+import it.register.tech.exercise.one.model.LogSummary;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

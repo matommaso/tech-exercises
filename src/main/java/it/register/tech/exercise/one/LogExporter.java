@@ -1,6 +1,7 @@
 package it.register.tech.exercise.one;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import it.register.tech.exercise.one.model.LogSummary;
 
 import java.io.File;
 import java.io.IOException;

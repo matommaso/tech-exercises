@@ -1,10 +1,7 @@
-package it.register.tech.exercise.one;
+package it.register.tech.exercise.one.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import it.register.tech.exercise.one.model.LogSummary;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
