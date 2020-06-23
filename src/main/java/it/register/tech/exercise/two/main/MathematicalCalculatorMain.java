@@ -1,4 +1,6 @@
-package it.register.tech.exercise.two;
+package it.register.tech.exercise.two.main;
+
+import it.register.tech.exercise.two.MathematicalCalculator;
 
 import java.math.BigInteger;
 

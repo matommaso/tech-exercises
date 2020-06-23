@@ -19,7 +19,7 @@ public class MathematicalCalculator {
         return result;
     }
 
-    private boolean isEqualToZero(int[] value) {
+    public boolean isEqualToZero(int[] value) {
 
         for (int i = 0; i < value.length; i++) {
             if (value[i] != 0)
@@ -46,6 +46,10 @@ public class MathematicalCalculator {
     }
 
     public int[] subtractOne(int[] value) {
+
+        if(isEqualToZero(value)){
+           throw new ArithmeticException();
+        }
 
         int[] result = new int[arraySize];
         int[] one = new int[arraySize];
